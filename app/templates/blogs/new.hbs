@@ -1,0 +1,17 @@
+<h1>New Blog</h1>
+<form>
+  <div class="form-group" >
+    <label for="title">Title</label>
+    {{input value=model.title id="title" class="form-control"}}
+  </div>
+  <div class="form-group">
+  <label for="body">Created Date</label>
+  {{bs-datetimepicker date=model.created_at pickTime=true showToday=false  forceDateOutput=true format='YYYY-MM-DD HH:mm:00' updateDate=(action (mut model.created_at))}}
+    </div>
+  <div class="form-group">
+    <label for="body">Body</label>
+    {{textarea value=model.body class="form-control" id="body" rows="15"}}
+  </div>
+
+  <button class="btn btn-primary" {{action 'save' model}}>Save</button>
+</form>
